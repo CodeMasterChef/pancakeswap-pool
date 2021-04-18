@@ -67,10 +67,18 @@ We hard code the approved token number is 10000 here.
     );
 ```
 The deadline is 10 minutes. The timestamp is in second so that we need to divided by 1000. We set that after 10 minutes the transaction must be completed so that we need to plus with: 10 min * 60 seconds = 600 seconds.
-
 # Deploy to BSC Testnet:
-Add `mnemonic` on the truffle-config.js. Please use the test wallet and don't push it to Github.
+Install packages:
 ```
-npm install
-truffle exec scripts/deploy-pool.js --network bscTestnet
+$ npm install
+```
+
+Create a `.env` file from copying `.env.example` file. Change the PRIVATE_KEY by your private key.
+
+Faucet for free BNB on BSC Testnet: https://testnet.binance.org/faucet-smart
+
+Run to deploy to BSC Testnet:
+
+```
+$ truffle exec scripts/deploy-pool.js --network bsctestnet
 ```
